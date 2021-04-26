@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: chartmuseum
+  namespace: chartmuseum
+spec:
+  project: default
+  source:
+    repoURL: 'https://charts.helm.sh/stable'
+    chart: chartmuseum
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
