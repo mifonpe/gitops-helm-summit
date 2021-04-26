@@ -3,14 +3,12 @@ terraform {
 
   backend "s3" {
     encrypt = "true"
-    bucket  = ""
+    bucket  = "terrastate-mfontanp"
     key     = "gitops-helm-summit/iac.tfstate"
     region  = "eu-central-1"
-    profile = ""
   }
 }
 
 provider "aws" {
-  profile = ""
   region  = "eu-central-1"
 }
