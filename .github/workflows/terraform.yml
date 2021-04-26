@@ -12,6 +12,5 @@ jobs:
       AWS_REGION: 'eu-central-1'
     steps:
       - uses: actions/checkout@v2
-      - run: cd iac
-      - run: terraform init
-      - run: terraform apply -auto-approve
+      - run: cd iac && terraform init
+      - run: cd iac && terraform apply -auto-approve
