@@ -1,6 +1,6 @@
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "2.47.0"
+  version = "3.0.0"
 
   name                 = "gitops-helm-summit"
   cidr                 = "10.20.0.0/16"
