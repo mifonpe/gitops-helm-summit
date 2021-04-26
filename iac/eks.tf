@@ -129,6 +129,15 @@ data "aws_iam_policy_document" "worker_autoscaling" {
   }
 }
   
+######################################
+# Chartmuseum IAM Permissions #
+######################################
+  
+resource "aws_iam_role_policy_attachment" "s3_access" {
+  policy_arn = aws_iam_policy.s3_access.arn
+  role       = module.eks.worker_iam_role_name
+}
+  
 resource "aws_iam_policy" "s3_access" {
   name_prefix = "s3-chartmuseum-access"
   description = "Provides chartmuseum with access for its s3 backend"
