@@ -128,3 +128,37 @@ data "aws_iam_policy_document" "worker_autoscaling" {
     }
   }
 }
+  
+resource "aws_iam_policy" "s3_access" {
+  name_prefix = "s3-chartmuseum-access"
+  description = "Provides chartmuseum with access for its s3 backend"
+  policy      = data.aws_iam_policy_document.s3_access.json
+  path        = "/s3/demo-bucket/"
+}
+
+data "aws_iam_policy_document" "s3_access" {
+  statement {
+    sid    = "chartmuseumS3List"
+    effect = "Allow"
+
+    actions = [
+      "s3:ListBucket"
+    ]
+
+    resources = ["arn:aws:s3:::gitops-helm-summit-chartmuseum"]
+  }
+
+  statement {
+    sid    = "chartmuseumS3Access"
+    effect = "Allow"
+
+    actions = [
+        "s3:DeleteObject",
+        "s3:GetObject",
+        "s3:PutObject"
+    ]
+
+    resources = ["arn:aws:s3:::gitops-helm-summit-chartmuseum/*"]
+   
+  }
+}
