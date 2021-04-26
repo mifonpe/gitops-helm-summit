@@ -6,18 +6,19 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://charts.helm.sh/stable'
-    chart: chartmuseum
+    repoURL: 'https://chartmuseum.github.io/charts'
+    targetRevision: 3.1.0
     helm:
-      parameters:
-        - name: env.open.STORAGE_AMAZON_BUCKET
-          value: "gitops-helm-summit-chartmuseum"
-        - name: env.open.STORAGE_AMAZON_PREFIX
-          value: "/"
-        - name: env.open.STORAGE_AMAZON_REGION
-          value: "eu-west-1"
-        - name: service.type
-          value: LoadBalancer
+      values: |
+        env:
+          open:
+            STORAGE_AMAZON_BUCKET: gitops-helm-summit-chartmuseum
+            STORAGE_AMAZON_PREFIX: "/"
+            STORAGE_AMAZON_REGION: eu-west-1
+        service:
+          type: LoadBalancer
+    chart: chartmuseum
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
+
