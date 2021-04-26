@@ -11,12 +11,13 @@ spec:
     helm:
       parameters:
         - name: env.open.STORAGE_AMAZON_BUCKET
-          value: ""
+          value: "gitops-helm-summit-chartmuseum"
         - name: env.open.STORAGE_AMAZON_PREFIX
-          value: ""
+          value: "/"
         - name: env.open.STORAGE_AMAZON_REGION
-          value: ""
-        
+          value: "eu-west-1"
+        - name: service.type
+          value: LoadBalancer
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
