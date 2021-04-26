@@ -10,11 +10,13 @@ spec:
     chart: chartmuseum
     helm:
       parameters:
-        - name: app
-          value: $ARGOCD_APP_NAME
+        - name: env.open.STORAGE_AMAZON_BUCKET
+          value: ""
+        - name: env.open.STORAGE_AMAZON_PREFIX
+          value: ""
+        - name: env.open.STORAGE_AMAZON_REGION
+          value: ""
+        
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
-
-      
-
