@@ -1,0 +1,18 @@
+on: 
+  push:
+    paths: argocd/**
+    
+name: argoDeploy
+jobs:
+  deploy:
+    name: deploy to cluster
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: deploy to cluster
+      uses: steebchen/kubectl@master
+      env:
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        KUBECTL_VERSION: "1.19"
+      with:
+        args: apply -f argocd/*
