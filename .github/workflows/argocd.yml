@@ -1,6 +1,8 @@
 on: 
   push:
-    paths: argocd/**
+    paths: 
+      - argocd/**
+      - .github/workflows/argocd.yml
     
 name: argoDeploy
 jobs:
