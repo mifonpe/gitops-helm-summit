@@ -1,3 +1,4 @@
+target-branch: main
 chart-dirs:
   - charts
 chart-repos:
