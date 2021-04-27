@@ -21,7 +21,6 @@ spec:
             STORAGE_AMAZON_REGION: eu-west-1
             AUTH_ANONYMOUS_GET: true
             ALLOW_OVERWRITE: true
-            
         service:
           type: LoadBalancer
     chart: chartmuseum
