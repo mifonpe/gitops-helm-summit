@@ -11,10 +11,15 @@ spec:
     helm:
       values: |
         env:
+          secret:
+            BASIC_AUTH_USER: <user>
+            BASIC_AUTH_PASS: <pass>
           open:
             STORAGE_AMAZON_BUCKET: gitops-helm-summit-chartmuseum
             STORAGE_AMAZON_PREFIX: "/"
             STORAGE_AMAZON_REGION: eu-west-1
+            AUTH_ANONYMOUS_GET: true
+            ALLOW_OVERWRITE: true
         service:
           type: LoadBalancer
     chart: chartmuseum
