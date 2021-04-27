@@ -11,7 +11,7 @@ This charts deploy a sample ToDo application to help you exercise with Kubernete
 Add this demo public chart repo:
 
 ```console
-helm repo add migueles http://a6412244e5de940e7ba0eb62fa02eb36-1300587414.eu-west-1.elb.amazonaws.com/
+helm repo add migueles http://a6412244e5de940e7ba0eb62fa02eb36-1300587414.eu-west-1.elb.amazonaws.com:8080
 ```
 
 A simple install with default values:
