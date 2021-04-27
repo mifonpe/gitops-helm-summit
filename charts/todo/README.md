@@ -4,6 +4,8 @@
 
 This charts deploy a sample ToDo application to help you exercise with Kubernetes
 
+**Homepage:** <https://github.com/gitops-helm-summit>
+
 ## How to install this chart
 
 Add this demo public chart repo:
