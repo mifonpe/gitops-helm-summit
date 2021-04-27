@@ -8,8 +8,8 @@ This charts deploy a sample ToDo application to help you exercise with Kubernete
 
 | Name | Email | Url |
 | ---- | ------ | --- |
-| Miguel Mingorance |  | github.com/mmingorance-dh |
-| Miguel Fontanilla |  | github.con/mifonpe |
+| mmingorance-dh |  |  |
+| mifonpe |  |  |
 
 ## Values
 
