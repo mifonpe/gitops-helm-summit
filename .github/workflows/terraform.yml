@@ -2,6 +2,9 @@ on:
   push:
     branches:
       - main
+    paths: 
+      - iac/**
+      - .github/workflows/terraform.yml
 jobs:
   create-infra:
     name: Setup Infrastructure
