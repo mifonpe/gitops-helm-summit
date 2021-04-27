@@ -9,34 +9,34 @@
 
 ## How to install this chart
 
-Add Delivery Hero public chart repo:
+Add this demo public chart repo:
 
 ```console
-helm repo add deliveryhero https://charts.deliveryhero.io/
+helm repo add migueles http://a6412244e5de940e7ba0eb62fa02eb36-1300587414.eu-west-1.elb.amazonaws.com/
 ```
 
 A simple install with default values:
 
 ```console
-helm install deliveryhero/{{ template "chart.name" . }}
+helm install migueles/{{ template "chart.name" . }}
 ```
 
 To install the chart with the release name `my-release`:
 
 ```console
-helm install my-release deliveryhero/{{ template "chart.name" . }}
+helm install my-release migueles/{{ template "chart.name" . }}
 ```
 
 To install with some set values:
 
 ```console
-helm install my-release deliveryhero/{{ template "chart.name" . }} --set values_key1=value1 --set values_key2=value2
+helm install my-release migueles/{{ template "chart.name" . }} --set values_key1=value1 --set values_key2=value2
 ```
 
 To install with custom values file:
 
 ```console
-helm install my-release deliveryhero/{{ template "chart.name" . }} -f values.yaml
+helm install my-release migueles/{{ template "chart.name" . }} -f values.yaml
 ```
 
 {{ template "chart.sourcesSection" . }}
