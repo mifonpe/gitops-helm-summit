@@ -13,7 +13,9 @@ jobs:
     - uses: actions/checkout@master
     - uses: unfor19/install-aws-cli-action@v1
       with:
-        version: 2
+        version: 1
+    - run: sed -i  's/<user>/'"${{ secrets.CHARTMUSEUM_USER }}"'/g' argocd/chartmuseum.yaml
+    - run: sed -i  's/<pass>/'"${{ secrets.CHARTMUSEUM_PASS }}"'/g' argocd/chartmuseum.yaml
     - name: deploy to cluster
       uses: steebchen/kubectl@master
       env:
