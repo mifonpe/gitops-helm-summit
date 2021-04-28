@@ -4,6 +4,10 @@ metadata:
   name: todo
   namespace: argocd
 spec:
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
   project: default
   source:
     repoURL: 'http://a6412244e5de940e7ba0eb62fa02eb36-1300587414.eu-west-1.elb.amazonaws.com:8080'
@@ -13,9 +17,9 @@ spec:
       releaseName: todo
       values: |
         autoscaling:
-          enabled: false
+          enabled: true
         ingress:
-          enabled: false
+          enabled: true
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
