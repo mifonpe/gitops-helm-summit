@@ -17,9 +17,9 @@ spec:
       releaseName: todo
       values: |
         autoscaling:
-          enabled: true
+          enabled: false
         ingress:
-          enabled: true
+          enabled: false
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
